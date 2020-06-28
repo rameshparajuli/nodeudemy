@@ -1,0 +1,19 @@
+{
+  "name": "udemy",
+  "version": "1.0.0",
+  "description": "learning node.js course",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon App.js",
+    "start-server": "node App.js"
+  },
+  "author": "Ramesh Parajuli",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
