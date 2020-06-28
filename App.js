@@ -6,4 +6,4 @@ const routes = require("./routes");
 const http = require("http");
 
 const server = http.createServer(routes.handler);
-server.listen(3000, "localhost", routes.serverMessage);
+server.listen(3000, "127.0.0.1", routes.serverMessage);
