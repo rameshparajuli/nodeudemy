@@ -1,21 +1,24 @@
 const routes = require("./routes");
+
+const adminRoutes = require("./routes/admin");
+const shopRoutes = require("./routes/shop");
+const pageNotFound = require("./routes/page_not_found");
+
 const http = require("http");
-
+const bodyParser = require("body-parser");
 const express = require("express");
+
 const app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use((req, res, next) => {
-  console.log("first");
-  next();
-});
-
-app.use((req, res, next) => {
-  console.log("next");
-  res.send(
-    `<html><head><title>node</title></head><h1>Hello World from node Express </h1></body>`
-  );
-});
+app.use(adminRoutes);
+app.use(shopRoutes);
+app.use(pageNotFound);
 
 // const server = http.createServer(routes.handler);
-const server = http.createServer(app);
-server.listen(3000, "127.0.0.1", routes.serverMessage);
+
+// if we use express, we don't have to use this
+// const server = http.createServer(app);
+// server.listen(3000, "127.0.0.1", routes.serverMessage);
+
+app.listen(3000);
