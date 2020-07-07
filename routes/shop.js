@@ -1,11 +1,11 @@
 const express = require("express");
-
+const path = require("path");
 const router = express.Router();
 
+const rootDir = require("../util/path");
+
 router.get("/", (req, res, next) => {
-  res.send(
-    `<html><head><title>node</title></head><body><h1>Hello World from node Express </h1> </br> <form action="/add-product" > <button type="submit">Goto Add Product page</button> </form action="/add-product"> </body></html>`
-  );
+  res.sendfile(path.join(rootDir, "views", "shop.html"));
 });
 
 module.exports = router;
