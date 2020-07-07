@@ -4,18 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Add Product</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/product.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <ul>
-          <li>
+    <header class="main-header">
+      <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+          <li class="main-header__item">
             <a href="/">
               Shop
             </a>
           </li>
-          <li>
-            <a href="/add-product">
+          <li class="main-header__item">
+            <a class="active" href="/add-product">
               Add Product
             </a>
           </li>
@@ -23,8 +25,13 @@
       </nav>
     </header>
     <main>
-      <form action="/product" method="POST">
-        <input type="text" placeholder="product" name="title" />
+      <form class="product-form" action="/product" method="POST">
+        <div class="form-control">
+          <label for="title">
+            Title
+          </label>
+          <input type="text" placeholder="product" name="title" id="title" />
+        </div>
         <button type="submit">Add Item</button>
       </form>
     </main>

@@ -7,9 +7,13 @@ const pageNotFound = require("./routes/page_not_found");
 const http = require("http");
 const bodyParser = require("body-parser");
 const express = require("express");
+const path = require("path");
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
+
+// to make css public folder
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(adminRoutes);
 app.use(shopRoutes);
